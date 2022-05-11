@@ -128,18 +128,10 @@ const audioBookSchema = buildSchema<AudioBook>({
       validation: { required: true },
       dataType: "array",
       of: {
-        
-        dataType: "string",
-        config: {
-          enumValues: {
-            electronics: "Electronics",
-            books: "Books",
-            furniture: "Furniture",
-            clothing: "Clothing",
-            food: "Food"
-          }
-        }
-      }
+        dataType: "reference",
+        path: "bookcategories",
+        previewProperties: ["title"]
+    }
     },
     publisher: {
       title: "Publisher",
