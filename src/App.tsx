@@ -170,7 +170,7 @@ export default function App() {
   };
 
   return <FirebaseCMSApp
-    name={"Lisen CMS"}
+    name={"iSpeaking Admin"}
     authentication={myAuthenticator}
     navigation={navigation}
     firebaseConfig={firebaseConfig}
