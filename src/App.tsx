@@ -46,12 +46,11 @@ const questionSchema = buildSchema<Questions>({
       title: "Part",
       validation: { required: true },
       dataType: "string",
-      longDescription: "",
       config: {
         enumValues: {
-          private: "Part 1",
-          public: "Part 2",
-          pending: "Part 3"
+          partOne: "Part 1",
+          partTwo: "Part 2",
+          partThree: "Part 3"
         }
       }
     },
@@ -74,12 +73,12 @@ const questionSchema = buildSchema<Questions>({
         dataType: "reference",
         path: "topics",
         previewProperties: ["title"]
-    }
+      }
     },
-
     publish_date: {
       title: "Publish date",
-      dataType: "timestamp"
+      dataType: "timestamp",
+      validation: { required: true }
     }
   }
 });
@@ -145,7 +144,7 @@ export default function App() {
           //   })
           // ]
         }),
-        buildCollection({path:"topics", schema: topicsSchema, name: 'Topics'})
+        buildCollection({ path: "topics", schema: topicsSchema, name: 'Topics' })
 
       ]
     });
